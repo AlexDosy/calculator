@@ -1,0 +1,70 @@
+<style>
+  .calculator {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .calculator-screen {
+    width: 100%;
+    height: 60px;
+    font-size: 24px;
+    text-align: right;
+    padding: 0.5rem;
+  }
+  
+  .calculator-keys button {
+    width: 60px;
+    height: 60px;
+    font-size: 18px;
+    margin: 0.2rem;
+  }
+  
+  .calculator-keys .operator {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .calculator-keys .decimal {
+    background-color: #6c757d;
+    color: #fff;
+  }
+  
+  .calculator-keys .all-clear {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  .calculator-keys .equal-sign {
+    background-color: #28a745;
+    color: #fff;
+  }
+  </style>
+  
+  <div class="calculator">
+    <input type="text" class="calculator-screen form-control" [value]="input" required/>
+    <div class="calculator-keys">
+      <button type="button" class="btn btn-primary operator" (click)="getOperation('+')">+</button>
+      <button type="button" class="btn btn-primary operator" (click)="getOperation('-')">-</button>
+      <button type="button" class="btn btn-primary operator" (click)="getOperation('*')">&times;</button>
+      <button type="button" class="btn btn-primary operator" (click)="getOperation('/')">&divide;</button>
+    
+      <button type="button" class="btn btn-light" (click)="getNumber('7')">7</button>
+      <button type="button" class="btn btn-light" (click)="getNumber('8')">8</button>
+      <button type="button" class="btn btn-light" (click)="getNumber('9')">9</button>
+    
+      <button type="button" class="btn btn-light" (click)="getNumber('4')">4</button>
+      <button type="button" class="btn btn-light" (click)="getNumber('5')">5</button>
+      <button type="button" class="btn btn-light" (click)="getNumber('6')">6</button>
+    
+      <button type="button" class="btn btn-light" (click)="getNumber('1')">1</button>
+      <button type="button" class="btn btn-light" (click)="getNumber('2')">2</button>
+      <button type="button" class="btn btn-light" (click)="getNumber('3')">3</button>
+    
+      <button type="button" class="btn btn-light" (click)="getNumber('0')">0</button>
+      <button type="button" class="btn btn-light decimal" (click)="getDecimal()">.</button>
+      <button type="button" class="btn btn-danger all-clear" (click)="clear()">AC</button>
+    
+      <button type="button" class="btn btn-success equal-sign" (click)="calculate()">=</button>
+    </div>
+  </div>
+  
